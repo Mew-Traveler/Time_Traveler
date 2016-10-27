@@ -422,4 +422,71 @@ http_interactions:
         }
     http_version: 
   recorded_at: Thu, 27 Oct 2016 21:55:08 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/distancematrix/json?destinations=Hsinchu&key=<CLIENT_ID>&mode=Train&origins=Taipei
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - maps.googleapis.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 27 Oct 2016 22:36:27 GMT
+      Expires:
+      - Fri, 28 Oct 2016 22:36:27 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="36,35,34"
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Language,Accept-Encoding
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "destination_addresses" : [ "Hsinchu, East District, Hsinchu City, Taiwan" ],
+           "origin_addresses" : [ "Taipei City, Taiwan" ],
+           "rows" : [
+              {
+                 "elements" : [
+                    {
+                       "distance" : {
+                          "text" : "85.7 km",
+                          "value" : 85661
+                       },
+                       "duration" : {
+                          "text" : "1 hour 10 mins",
+                          "value" : 4171
+                       },
+                       "status" : "OK"
+                    }
+                 ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 27 Oct 2016 22:36:27 GMT
 recorded_with: VCR 3.0.3

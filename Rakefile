@@ -10,7 +10,7 @@ task default: :spec
 
 desc 'run tests'
 task :spec do
-  sh 'ruby spec/load_spec.rb'
+  sh 'ruby spec/overallapi_spec.rb'
 end
 
 desc 'delete cassette fixtures'
