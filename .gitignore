@@ -1,0 +1,4 @@
+config/*
+coverage/*
+spec/fixtures/*
+credentials.yml
