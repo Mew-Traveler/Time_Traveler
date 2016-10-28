@@ -6,9 +6,9 @@ module Google
     attr_reader :origins, :dest, :mode
 
 
-    def initialize(google_api,distance,search)
+    def initialize(distance,search)
       parseSearch(search)
-      @googleapi = google_api
+      @googleapi = ENV['GOOGLE_API']
       @infos = distance.map{ |item|
         infos = info(item)
       }
@@ -18,10 +18,10 @@ module Google
       @infos
     end
 
-    def self.find(google_api:,origins:,destinations:,mode:)
-      distance_data = google_api.distanceInfo(origins,destinations,mode)
-      @search_info = {originsVal:origins,destVal:destinations,modeVal:mode}
-      new(google_api,distance_data,@search_info)
+    def self.find(origins:,destinations:,mode:)
+      distance_data = GoogleApi.distanceInfo(origins,destinations,mode)
+      @search_info = {googleapi:ENV['GOOGLE_API'],originsVal:origins,destVal:destinations,modeVal:mode}
+      new(distance_data,@search_info)
     end
 
     private

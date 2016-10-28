@@ -16,9 +16,9 @@ module Airbnb
       @infos
     end
 
-    def self.find(airbnb_api:,location:)
-      @search_info = {api:airbnb_api,locate:location}
-      rooms_data = airbnb_api.rooms_info(location)
+    def self.find(location:)
+      @search_info = {api:ENV['AIRBNB_API'],locate:location}
+      rooms_data = AirbnbApi.rooms_info(location)
       new(rooms_data,@search_info)
     end
 

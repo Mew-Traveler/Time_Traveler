@@ -2,3 +2,5 @@ config/*
 coverage/*
 spec/fixtures/*
 credentials.yml
+Gemfile.lock
+*.gem

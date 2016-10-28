@@ -9,14 +9,18 @@ module Airbnb
     Airbnb_API_URL = URI.join(Airbnb_URL, "#{API_VER}/")
     Search_URL = URI.join(Airbnb_API_URL, "search_results")
 
-  #  attr_reader :airbnb_data
-    def initialize(airbnb_id:)
-        @airbnb_id = airbnb_id
+    def self.config=(credentials)
+      @config ? @config.update(credentials) : @config = credentials
     end
 
-    def rooms_info(location)
+    def self.config
+      return @config if @config
+      @config = { airbnb_id:  ENV['AIRBNB_API'] }
+    end
+
+    def self.rooms_info(location)
       rooms_response = HTTP.get(Search_URL,
-        params: { client_id: @airbnb_id,
+        params: { client_id: config[:airbnb_id],
                   location: location
                 })
       roomsinfo = JSON.load(rooms_response.to_s)['search_results']

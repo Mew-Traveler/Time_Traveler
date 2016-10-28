@@ -1,31 +1,31 @@
 # frozen_string_literal: true
+require 'simplecov'
+SimpleCov.start
+
 require 'minitest/autorun'
 require 'minitest/rg'
 require 'yaml'
 require 'vcr'
 require 'webmock'
 
-require './lib/airbnb_api.rb'
-require './lib/google_api.rb'
-require './lib/rentinfo.rb'
-require './lib/trafficinfo.rb'
-require 'simplecov'
-SimpleCov.start
-require_relative '../lib/facegroup'
+# require './lib/airbnb_api.rb'
+# require './lib/google_api.rb'
+# require './lib/rentinfo.rb'
+# require './lib/trafficinfo.rb'
+require_relative '../lib/Time_Traveler'
 
 FIXTURES_FOLDER = 'spec/fixtures'
 CASSETTES_FOLDER = "#{FIXTURES_FOLDER}/cassettes"
-CASSETTE_FILE = 'overallapi'
-
-# CREDENTIALS = YAML.load(File.read('config/credentials.yml'))
+CASSETTE_FILE_GOOGLE = 'google_distances'
+CASSETTE_FILE_AIRBNB = 'airbnb_rooms'
 
 if File.file?('config/credentials.yml')
   credentials = YAML.load(File.read('config/credentials.yml'))
-  ENV['FB_CLIENT_ID'] = credentials[:client_id]
-  ENV['FB_CLIENT_SECRET'] = credentials[:client_secret]
-  ENV['FB_ACCESS_TOKEN'] = credentials[:access_token]
-  ENV['FB_GROUP_ID'] = credentials[:group_id]
+  ENV['AIRBNB_API'] = credentials[:airbnb_id]
+  ENV['GOOGLE_API'] = credentials[:googlemap_id]
 end
 
-RESULT_FILE = "#{FIXTURES_FOLDER}/fb_api_results.yml"
-FB_RESULT = YAML.load(File.read(RESULT_FILE))
+RESULT_FILE_AIRBNB = "#{FIXTURES_FOLDER}/airbnb_api_results.yml"
+RESULT_FILE_GOOGLEMAP = "#{FIXTURES_FOLDER}/googlemap_api_results.yml"
+# AIRBNB_RESULT = YAML.load(File.read(RESULT_FILE_AIRBNB))
+# GOOGLEMAP_RESULT = YAML.load(File.read(RESULT_FILE_GOOGLEMAP))
