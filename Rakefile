@@ -10,7 +10,9 @@ task default: :spec
 
 desc 'run tests'
 task :spec do
-  sh 'ruby spec/overallapi_spec.rb'
+  sh 'ruby spec/airbnbapi_spec.rb'
+  sh 'ruby spec/googledistanceapi_spec.rb'
+
 end
 
 desc 'delete cassette fixtures'
