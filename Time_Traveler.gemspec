@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 	s.authors		= ['Yvonne Shih', 'Cheng-Han Hsieh', 'Wei Tang Lin']
 	s.email			= ['yvonshih@gmail.com', 'q2221252@gmail.com', 'wtlin0711@gmail.com']
 
-	sfiles			= `git ls-files`.split("\n")
+	s.files			= `git ls-files`.split("\n")
 	s.test_files	= `git ls-files -- spec/*`.split("\n")
 	s.executables	<< 'Time_Traveler'
 
