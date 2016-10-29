@@ -34,7 +34,7 @@ module Airbnb
     end
 
     def searchVal(oriSearch)
-      @loacation = oriSearch['locate']
+      @location = oriSearch['locate']
       @airbnbapi = oriSearch['api']
     end
 
