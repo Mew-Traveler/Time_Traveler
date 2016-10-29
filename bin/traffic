@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), *%w(.. lib))
+
+require 'Time_Traveler'
+
+origins = ARGV[0]
+destinations = ARGV[1]
+unless origin && destination
+	puts 'two arguments are need for origin and destination'
+	exit(1)
+end
+
+unless ENV['GOOGLE_API']
+	puts 'you haven\'t set your environment variable yet'
+	exit(1)
+end
+
+traffic_load = Airbnb::RentInfo.find(origins: origins, destinations: destinations,mode: )
+distance_data = traffic_load.trafficAnaly
+
+puts distance_data

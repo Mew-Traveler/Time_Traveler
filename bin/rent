@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), *%w(.. lib))
+
+require 'Time_Traveler'
+
+location = ARGV[0]
+unless location
+	puts 'no location'
+	exit(1)
+end
+
+unless ENV['AIRBNB_API']
+	puts 'you haven\'t set your environment variable yet'
+	exit(1)
+end
+
+airbnb_load = Google::TrafficInfo.find(location: location)
+rooms = airbnb_load.infos
+
+puts rooms

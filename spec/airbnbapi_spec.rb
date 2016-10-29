@@ -19,7 +19,7 @@ describe 'Load specifications' do
 
   it 'should be able to get the data from Airbnb' do
     airbnb_load = Airbnb::RentInfo.find(location: 'Hsinchu')
-    rooms =airbnb_load.infos
+    rooms = airbnb_load.infos
     rooms.length.must_be :>,0
   end
 
