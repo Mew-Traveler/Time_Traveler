@@ -3,7 +3,7 @@ require 'Time_Traveler/version'
 
 Gem::Specification.new do |s|
 	s.name			= 'Time_Traveler'
-	s.version		= 'Time_Traveler::VERSION'
+	s.version		= Time_Traveler::VERSION
 
 	s.summary		= 'Gets room content from Airbnb'
 	s.description	= 'Extracts rent informantion from Airbnb'
