@@ -1,7 +1,7 @@
 # Name : Time_Traveler
-# description : provide trip services.
+https://badge.fury.io/rb/Time_Traveler.svg
 
-https://rubygems.org/gems/Time_Traveler
+# description : provide trip services.
 
 Time_Traveler is a gem that specializes in providing trip services.
 
