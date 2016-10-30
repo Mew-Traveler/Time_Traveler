@@ -1,5 +1,5 @@
 # Name : Time_Traveler
-https://badge.fury.io/rb/Time_Traveler.svg
+[![Gem Version](https://badge.fury.io/rb/Time_Traveler.svg)](https://badge.fury.io/rb/Time_Traveler)
 
 # description : provide trip services.
 
