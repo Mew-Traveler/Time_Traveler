@@ -1,5 +1,6 @@
 # Name : Time_Traveler
 [![Gem Version](https://badge.fury.io/rb/Time_Traveler.svg)](https://badge.fury.io/rb/Time_Traveler)
+[![Build Status](https://travis-ci.org/Mew-Traveler/Time_Traveler.svg?branch=master)](https://travis-ci.org/Mew-Traveler/Time_Traveler)
 
 # description : provide trip services.
 
