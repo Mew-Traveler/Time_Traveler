@@ -15,7 +15,7 @@ For ad hoc installation from command line:
 
 ## Setup Time_Traveler Credentials
 
-Please setup your aribnb & google developer credentials by creating an app profile on aribnb & google Developer: http://airbnbapi.org/ & https://console.developers.google.com/ – you should get "client ID".
+Please setup your aribnb & google developer credentials by creating an app profile on aribnb & google Developer: http://airbnbapi.org/ & https://console.developers.google.com/ – you could get "client ID".
 
 ## Usage
 
