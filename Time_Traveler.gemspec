@@ -1,4 +1,4 @@
-$LOAD_PATH.push File.expand_path('../lib', __FILE__)
+$LOAD_PATH.push File.expand_path("../lib", __FILE__)
 require 'Time_Traveler/version'
 
 Gem::Specification.new do |s|
@@ -28,4 +28,5 @@ Gem::Specification.new do |s|
 	
 	s.homepage		= 'https://github.com/Mew-Traveler/Time_Traveler'
 	s.license		= 'MIT'
+	s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
 end
