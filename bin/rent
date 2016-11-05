@@ -14,7 +14,7 @@ unless ENV['AIRBNB_API']
 	exit(1)
 end
 
-airbnb_load = Google::TrafficInfo.find(location: location)
+airbnb_load = Airbnb::RentInfo.find(location: location)
 rooms = airbnb_load.infos
 
 puts rooms

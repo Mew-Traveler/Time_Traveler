@@ -6,7 +6,7 @@ require 'Time_Traveler'
 origins = ARGV[0]
 destinations = ARGV[1]
 mode = ARGV[2]
-unless origin && destination && mode
+unless origins && destinations && mode
 	puts 'two arguments are need for origin, destination and traffic method'
 	exit(1)
 end
@@ -16,7 +16,7 @@ unless ENV['GOOGLE_API']
 	exit(1)
 end
 
-traffic_load = Airbnb::RentInfo.find(origins: origins, destinations: destinations,mode: mode)
+traffic_load = Google::TrafficInfo.find(origins: origins, destinations: destinations,mode: mode)
 distance_data = traffic_load.trafficAnaly
 
 puts distance_data
