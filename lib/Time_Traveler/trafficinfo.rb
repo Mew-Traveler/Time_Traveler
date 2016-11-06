@@ -26,9 +26,9 @@ module Google
 
     private
     def parseSearch(sear)
-      @origins = sear['originsVal']
-      @dest = sear['destVal']
-      @mode = sear['modeVal']
+      @origins = sear[:originsVal]
+      @dest = sear[:destVal]
+      @mode = sear[:modeVal]
     end
 
     def info(item)
