@@ -20,10 +20,6 @@ module Google
       @config = { googlemap_id: ENV['GOOGLE_API'] }
     end
 
-    def self.analysis(posting_id)
-     fb_resource(posting_id)
-    end
-
     def self.distanceInfo(origins, dest, mode)
       return @distance if @distance
       distanceDetail = HTTP.get(Google_API_URL,
