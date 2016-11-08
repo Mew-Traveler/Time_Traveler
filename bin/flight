@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), *%w(.. lib))
+
+require 'Time_Traveler'
+
+market = ARGV[0]
+currency = ARGV[1]
+locale = ARGV[2]
+originPlace = ARGV[3]
+destinationPlace = ARGV[4]
+outBoundPartialDate = ARGV[5]
+unless origin && destination && mode
+	puts 'two arguments are need for origin, destination and traffic method'
+	exit(1)
+end
+
+unless ENV['SKYSCANNER_API']
+	puts 'you haven\'t set your environment variable yet'
+	exit(1)
+end
+
+flight = Airbnb::RentInfo.find(market: market, currency: currency, locale: locale, originPlace: originPlace, destinationPlace: destinationPlace, outBoundPartialDate: outBoundPartialDate)
+flightInfo = flight.flightInfo
+
+puts flightInfo
