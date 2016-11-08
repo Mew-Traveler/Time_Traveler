@@ -9,8 +9,8 @@ locale = ARGV[2]
 originPlace = ARGV[3]
 destinationPlace = ARGV[4]
 outBoundPartialDate = ARGV[5]
-unless origin && destination && mode
-	puts 'two arguments are need for origin, destination and traffic method'
+unless market && currency && locale && originPlace && destinationPlace && outBoundPartialDate
+	puts 'arguments are need for skyscanner method(market currency locale originPlace destinationPlace outBoundPartialDate)'
 	exit(1)
 end
 
@@ -19,7 +19,7 @@ unless ENV['SKYSCANNER_API']
 	exit(1)
 end
 
-flight = Airbnb::RentInfo.find(market: market, currency: currency, locale: locale, originPlace: originPlace, destinationPlace: destinationPlace, outBoundPartialDate: outBoundPartialDate)
+flight = Skyscanner::FlightInfo.find(market: 'TW', currency: 'TWD', locale: 'en-GB', originPlace: 'TW', destinationPlace: 'UK', outboundPartialDate: '2016-11-20')
 flightInfo = flight.flightInfo
 
 puts flightInfo

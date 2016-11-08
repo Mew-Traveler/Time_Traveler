@@ -15,7 +15,6 @@ module Skyscanner
 		end
 
 		def self.find(market:, currency:, locale:, originPlace:, destinationPlace:, outboundPartialDate:)
-			puts market+currency+locale
 			originData = SkyscannerApi.getOriginData(market, currency, locale, originPlace, destinationPlace, outboundPartialDate)
 			new(originData)
 		end
