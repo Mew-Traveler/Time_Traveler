@@ -23,5 +23,5 @@ Please setup your aribnb & google developer credentials by creating an app profi
 Require Time_Traveler gem in your code: `require 'Time_Traveler'`
 
 Supply your Time_Traveler credentials to our library in one of two ways:
-- Setup environment variables: `ENV['AIRBNB_API']` and `ENV['GOOGLE_API']`
+- Setup environment variables: `ENV['AIRBNB_API']` , `ENV['GOOGLE_API']` and `ENV['SKYSCANNER_API']`
 
