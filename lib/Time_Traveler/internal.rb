@@ -2,7 +2,6 @@ require_relative 'google_api_inter'
 
 module Google
   class GooglePlaceRating
-    # attr_reader :query
     attr_reader :rating_rawdata
 
     def initialize(data,input)
@@ -28,9 +27,6 @@ module Google
         @types = place['types']
         @address = place['formatted_address']
         @placename = place['name']
-        # @rating = queryresult[0]['rating']
-        # @lat = queryresult[0]['geometry']['location']['lat']
-        # @lng = queryresult[0]['geometry']['location']['lng']
       end
     end
   end
