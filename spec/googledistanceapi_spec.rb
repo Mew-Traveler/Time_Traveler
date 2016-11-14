@@ -27,4 +27,13 @@ describe 'Load specifications' do
     distance =google_load.trafficAnaly
     distance.length.must_be :>,0
   end
+
+  #google internal api test
+  it 'should be able to get rating from placeapi' do
+    google_rating = Google::GooglePlaceRating.find(
+      query: "清華大學 交通大學 餐廳"
+    )
+
+    rating = google_rating
+  end
 end
