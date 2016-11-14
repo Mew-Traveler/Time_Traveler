@@ -3,17 +3,17 @@ require 'rake/testtask'
 
 task default: :spec
 
-# desc 'Run specs'
-# Rake::TestTask.new(name=:spec) do |t|
-#   t.pattern = 'spec/*_spec.rb'
-# end
-
-desc 'run tests'
-task :spec do
-  sh 'ruby spec/airbnbapi_spec.rb'
-  sh 'ruby spec/googledistanceapi_spec.rb'
-
+desc 'Run specs'
+Rake::TestTask.new(name=:spec) do |t|
+  t.pattern = 'spec/*_spec.rb'
 end
+
+# desc 'run tests'
+# task :spec do
+#   sh 'ruby spec/airbnbapi_spec.rb'
+#   sh 'ruby spec/googledistanceapi_spec.rb'
+#
+# end
 
 desc 'delete cassette fixtures'
 task :wipe do

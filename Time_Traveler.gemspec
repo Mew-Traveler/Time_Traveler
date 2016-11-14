@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
 	s.add_development_dependency 'flog', '~> 4.4'
 	s.add_development_dependency 'flay', '~> 2.8'
 	s.add_development_dependency 'rubocop', '~> 0.42'
-	
 	s.homepage		= 'https://github.com/Mew-Traveler/Time_Traveler'
 	s.license		= 'MIT'
 	s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }

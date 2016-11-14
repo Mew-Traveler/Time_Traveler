@@ -1,0 +1,37 @@
+/*google traffic
+get duration and distance with location and mode*/
+1. URL:
+	[GET] https://maps.googleapis.com/maps/api/distancematrix/json?origins={originlocate}&destinations={destlocate}&mode={trafficmode}&key={apikey}
+2. header:
+3. response:
+	{
+  "destination_addresses": [
+    "Hsinchu County, Taiwan"
+  ],
+  "origin_addresses": [
+    "Taipei City, Taiwan"
+  ],
+  "rows": [
+    {
+      "elements": [
+        {
+          "distance": {
+            "text": "80.4 km",
+            "value": 80393
+          },
+          "duration": {
+            "text": "2 hours 3 mins",
+            "value": 7370
+          },
+          "fare": {
+            "currency": "TWD",
+            "text": "NT$131.00",
+            "value": 131
+          },
+          "status": "OK"
+        }
+      ]
+    }
+  ],
+  "status": "OK"
+}

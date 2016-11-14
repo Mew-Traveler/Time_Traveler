@@ -6,7 +6,7 @@ require 'Time_Traveler'
 origins = ARGV[0]
 destinations = ARGV[1]
 mode = ARGV[2]
-unless origin && destination && mode
+unless origins && destinations && mode
 	puts 'two arguments are need for origin, destination and traffic method'
 	exit(1)
 end
