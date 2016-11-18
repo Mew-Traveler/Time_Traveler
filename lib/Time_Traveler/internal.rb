@@ -8,6 +8,7 @@ module Google
       @googleapi = ENV['GOOGLE_API']
       @queryVal = input[0]
       rating_analysis(data)
+      @info = data[0]
     end
 
     def self.find(query:)
@@ -17,7 +18,11 @@ module Google
       new(rating_rawdata,@queryRating_input)
     end
 
-    
+    def return_rating
+      @info
+    end
+
+    private
     def rating_analysis(queryresult)
       queryresult.map do |place|
         @rating = place['rating']

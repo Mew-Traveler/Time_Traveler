@@ -6,7 +6,6 @@ describe 'Load specifications' do
     c.hook_into :webmock
 
     c.filter_sensitive_data('<AIRBNB_ID>') {ENV['AIRBNB_API'] }
-    c.filter_sensitive_data('<GOOGLEMAP_ID>') {ENV['GOOGLE_API'] }
   end
 
   before do

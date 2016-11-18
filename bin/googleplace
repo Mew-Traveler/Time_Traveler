@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), *%w(.. lib))
+
+require 'Time_Traveler'
+
+query = ARGV[0]
+unless query
+	puts 'at least one argument is need for query method'
+	exit(1)
+end
+
+unless ENV['GOOGLE_API']
+	puts 'you haven\'t set your environment variable yet'
+	exit(1)
+end
+google_rating = Google::GooglePlaceRating.find(query: query)
+rating = google_rating.return_rating
+
+puts rating

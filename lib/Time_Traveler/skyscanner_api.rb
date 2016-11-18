@@ -17,13 +17,11 @@ module Skyscanner
 
     def self.getOriginData(market, currency, locale, originPlace, destinationPlace, outboundPartialDate)
       url = URI.join(Skyscanner_API_URL, market+"/", currency+"/", locale+"/", originPlace+"/", destinationPlace+"/", outboundPartialDate);
-      skyscanner_response = HTTP.get(url, 
+      skyscanner_response = HTTP.get(url,
         params: {
-          apiKey: config[:skyscanner_id]
+        apiKey: config[:skyscanner_id]
         })
-
       originData = JSON.load(skyscanner_response.body.to_s)
-      originData
     end
   end
 end

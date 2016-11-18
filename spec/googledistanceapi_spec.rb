@@ -5,7 +5,6 @@ describe 'Load specifications' do
     c.cassette_library_dir = CASSETTES_FOLDER
     c.hook_into :webmock
 
-    c.filter_sensitive_data('<AIRBNB_ID>') {ENV['AIRBNB_API'] }
     c.filter_sensitive_data('<GOOGLEMAP_ID>') {ENV['GOOGLE_API'] }
   end
 
@@ -34,6 +33,8 @@ describe 'Load specifications' do
       query: "清華大學 交通大學 餐廳"
     )
 
-    rating = google_rating
+    rating = google_rating.return_rating
+    rating.length.must_be :>,0
+
   end
 end

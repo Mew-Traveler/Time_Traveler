@@ -21,12 +21,12 @@ module Skyscanner
 
     private
     def getCarrierId2Carrier(originData)
-      carriers = originData["Carriers"]
+      carriers = originData['Carriers']
       carrierId2Carrier = Hash.new()
       carriers.each do |carrier|
-      carrierId2Carrier[carrier["CarrierId"]] = carrier["Name"]
-        end	
-      carrierId2Carrier		
+      carrierId2Carrier[carrier['CarrierId']] = carrier['Name']
+        end
+      carrierId2Carrier
     end
 
     private
@@ -54,6 +54,6 @@ module Skyscanner
         quote["OutboundLeg"]["DestinationId"] = placeId2Place[quote["OutboundLeg"]["DestinationId"]]
       end
       quotes
-    end		
+    end
   end
 end
