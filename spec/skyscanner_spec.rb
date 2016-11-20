@@ -17,8 +17,9 @@ describe 'Load specifications' do
   end
 
   it 'should be able to get the data from Skyscanner' do
-    skyscanner_load = Skyscanner::FlightInfo.find(market: 'TW', currency: 'TWD', locale: 'en-GB', originPlace: 'TW', destinationPlace: 'UK', outboundPartialDate: '2016-11-20')
+    skyscanner_load = Skyscanner::FlightInfo.find(market: 'TW', currency: 'TWD', locale: 'en-GB', originPlace: 'TW', destinationPlace: 'UK', outboundPartialDate: 'anytime')
     flightInfo = skyscanner_load.flightInfo
+    print skyscanner_load
     flightInfo.length.must_be :>,0
   end
 

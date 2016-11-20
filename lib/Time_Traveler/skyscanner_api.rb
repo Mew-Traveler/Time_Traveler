@@ -21,7 +21,8 @@ module Skyscanner
         params: {
         apiKey: config[:skyscanner_id]
         })
-      originData = JSON.load(skyscanner_response.body.to_s)
+        print skyscanner_response
+        originData = JSON.load(skyscanner_response.to_s)
     end
   end
 end
