@@ -25,11 +25,19 @@ module Airbnb
     private
     def room(item)
       #item = item['listing']
+      room_id = item['listing']['id']
       room = {
-        city: item['listing']['city'],
+        id: room_id,
         name: item['listing']['name'],
-        pic_url: item['listing']['picture_url'],
-        id: item['listing']['id']
+        # need to get price from airbnbAPI
+        #  Basic Sample Request: 
+        #   https://api.airbnb.com/v2/listings/5116458?client_id=3092nxybyb0otqw18e8nh5nty&_format=v1_legacy_for_p3
+        address: item['listing']['public_address'],
+        airbnb_link: "https://www.airbnb.com.tw/rooms/" + room_id.to_s,
+        roomImg: item['listing']['picture_url'],
+        bed: item['listing']['beds'],
+        roomRank: item['listing']['star_rating']
+
       }
     end
 
