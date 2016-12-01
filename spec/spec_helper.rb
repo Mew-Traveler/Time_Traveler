@@ -20,11 +20,11 @@ CASSETTE_FILE_GOOGLE = 'google_distances'
 CASSETTE_FILE_AIRBNB = 'airbnb_rooms'
 CASSETTE_FILE_SKYSCANNER = 'skyscanner_flights'
 
-if File.file?('config/credentials.yml')
-  credentials = YAML.load(File.read('config/credentials.yml'))
-  ENV['AIRBNB_API'] = credentials[:AIRBNB_API]
-  ENV['GOOGLE_API'] = credentials[:GOOGLE_API]
-  ENV['SKYSCANNER_API'] = credentials[:SKYSCANNER_API]
+if File.file?('config/app.yml')
+  credentials = YAML.load(File.read('config/app.yml'))
+  ENV['AIRBNB_API'] = credentials['development']['AIRBNB_API']
+  ENV['GOOGLE_API'] = credentials['development']['GOOGLE_API']
+  ENV['SKYSCANNER_API'] = credentials['development']['SKYSCANNER_API']
 end
 
 RESULT_FILE_AIRBNB = "#{FIXTURES_FOLDER}/airbnb_api_results.yml"

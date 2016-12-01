@@ -9,7 +9,7 @@ module Airbnb
       @infos = rooms.map { |item|
         rooms = room(item)
       }
-      searchVal(info)
+      # searchVal(info)
     end
 
     def infos

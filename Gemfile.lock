@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    Time_Traveler (0.1.70)
+    Time_Traveler (0.1.71)
       http (~> 2.0)
 
 GEM
@@ -12,7 +12,7 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     docile (1.1.5)
-    domain_name (0.5.20161021)
+    domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     flay (2.8.1)
@@ -86,4 +86,4 @@ DEPENDENCIES
   webmock (~> 2.1)
 
 BUNDLED WITH
-   1.13.5
+   1.13.6
